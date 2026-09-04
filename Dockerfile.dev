@@ -1,0 +1,15 @@
+FROM node:24-alpine@sha256:01743339035a5c3c11a373cd7c83aeab6ed1457b55da6a69e014a95ac4e4700b
+COPY --chmod=755 .tools/sfw /usr/local/bin/sfw
+RUN echo '28b6dc864d6bbc8bbd41f85a0e894f91f4ab41f2fc1c304c0c08e29da63ccf69  /usr/local/bin/sfw' | sha256sum -c - \
+    && mkdir -p /workspace && chown node:node /workspace
+USER node
+WORKDIR /workspace
+ENV NPM_CONFIG_USERCONFIG=/source/.npmrc
+ENV NPM_CONFIG_GLOBALCONFIG=/dev/null
+ENV NPM_CONFIG_IGNORE_SCRIPTS=true
+ENV NPM_CONFIG_MIN_RELEASE_AGE=7
+ENV NPM_CONFIG_AUDIT=true
+ENV NPM_CONFIG_SAVE_EXACT=true
+ENV NPM_CONFIG_ENGINE_STRICT=true
+ENV NPM_CONFIG_FUND=false
+ENV SFW_VERBOSE=true

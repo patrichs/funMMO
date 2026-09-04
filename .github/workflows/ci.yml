@@ -1,0 +1,30 @@
+name: Verify
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Bootstrap verified Socket binary and isolated tooling
+        run: |
+          ./dev bootstrap
+          ./dev image
+          ./dev policy-test
+      - name: Check locked release ages and install through Socket
+        run: ./dev install
+      - name: Test gameplay and real multiplayer clients
+        run: ./dev test
+      - name: Build client and server
+        run: ./dev build
+      - name: Test rendered multiplayer game
+        run: |
+          ./dev up
+          ./dev browser
+      - name: Stop containers
+        if: always()
+        run: ./dev down

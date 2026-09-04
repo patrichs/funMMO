@@ -1,0 +1,440 @@
+[
+  {
+    "name": "@babylonjs/core",
+    "version": "9.23.0",
+    "integrity": "sha512-FpDaTPx485J1H0AEJpoJ785Z1CwCkEPNnZFu7WzHTy0ByGCy75bkZZILh4QFU4LLnzK1iuHwUfecCguATIeKSA==",
+    "publishedAt": "2026-08-27T07:40:03.583Z"
+  },
+  {
+    "name": "@better-auth/utils",
+    "version": "0.3.1",
+    "integrity": "sha512-+CGp4UmZSUrHHnpHhLPYu6cV+wSUSvVbZbNykxhUDocpVNTo9uFFxw/NqJlh1iC4wQ9HKKWGCKuZ5wUgS0v6Kg==",
+    "publishedAt": "2026-01-27T07:11:01.569Z"
+  },
+  {
+    "name": "@better-fetch/fetch",
+    "version": "1.3.1",
+    "integrity": "sha512-ABkD1WhyfPZprKRQI3bhATjeiFuNWC9PXhfGWqL+sg/gKrM977oFrYkdb4msM3hgUGonr7KlOsOFT5TU2rht9g==",
+    "publishedAt": "2026-06-15T22:04:05.928Z"
+  },
+  {
+    "name": "@colyseus/better-call",
+    "version": "1.3.3",
+    "integrity": "sha512-ISJtvMx6fV0ABPQt/ljzPc4O2+mFvyVKeHKX02qBSWKR0VXOXzniAC64POea4pp8DxZTbgHoSPpXjdnNpUkeLw==",
+    "publishedAt": "2026-03-06T14:08:59.576Z"
+  },
+  {
+    "name": "@colyseus/clock",
+    "version": "2.0.3",
+    "integrity": "sha512-kziqG0dcGsvSfcerHLZTY1V2PmGnZAdG5DM0T5BKQDAiYBXYoMqfzA1Wxfe3KSnyeZuP99isffkUQLEwpFYF7A==",
+    "publishedAt": "2026-01-09T17:50:11.738Z"
+  },
+  {
+    "name": "@colyseus/core",
+    "version": "0.18.10",
+    "integrity": "sha512-tbVY+4w+l+q4mRG8lNVflJgG4OHjkIV1wnBh0h9L9GhAxDpXbfrvGEL17Xk0eivYRJfMkjOok5x8CDXp2aPOyw==",
+    "publishedAt": "2026-08-28T15:14:26.323Z"
+  },
+  {
+    "name": "@colyseus/greeting-banner",
+    "version": "4.0.2",
+    "integrity": "sha512-xjGxqX3bZqhE7BvsGl500zU01NTx7YbckGwCzFpOFsPwfcHRi/UIvwWS6wNp7JJFy2jlTSJhlbUUoQVAeCfcxQ==",
+    "publishedAt": "2026-08-26T00:19:21.651Z"
+  },
+  {
+    "name": "@colyseus/schema",
+    "version": "5.0.23",
+    "integrity": "sha512-6fXSIjqBoEYw4PBs4vvzpFL0vGRAQ9ezwxILpazb+Uw2/qsbgUt+F4DGNYzecsdTogsrpHETqHYDlkI783RUig==",
+    "publishedAt": "2026-08-27T15:05:00.104Z"
+  },
+  {
+    "name": "@colyseus/sdk",
+    "version": "0.18.2",
+    "integrity": "sha512-rM3xk0bk48i7fxIdVqCunPTEwI8dzyCYh/PwhYFeV4tabUiulKbg3qY8gvI0zoPCnwslmphMigM10xcGzZvmdA==",
+    "publishedAt": "2026-08-20T11:10:35.794Z"
+  },
+  {
+    "name": "@colyseus/shared-types",
+    "version": "0.18.2",
+    "integrity": "sha512-z+r+4p3NYW3fDW9BJiBsqcepi/ulUTQXe0rJiKIuLWX3/cdzCVdkyRmLSnkMhulPl+moaHG7QdseqQixha5C3A==",
+    "publishedAt": "2026-08-26T00:19:22.279Z"
+  },
+  {
+    "name": "@colyseus/timer",
+    "version": "2.0.3",
+    "integrity": "sha512-75MI7LfXQncibesa7W6FKWUc8YBcVI6jwBrDXOq1TlgYQXSMRv7a5WFPBdDKkP5Pht9IWpE2hyUb8B1DPrLYqg==",
+    "publishedAt": "2026-01-09T17:50:20.227Z"
+  },
+  {
+    "name": "@colyseus/ws-transport",
+    "version": "0.18.2",
+    "integrity": "sha512-+qZRam8rmY1bJXQ/mAQPJzDb2JwCUHO9bduIBNvi08R1yH9TkFmzis0vcSatmfvkPWZZOgljNBvv+/3ENkxi+Q==",
+    "publishedAt": "2026-08-26T00:19:26.361Z"
+  },
+  {
+    "name": "@msgpackr-extract/msgpackr-extract-darwin-arm64",
+    "version": "3.0.4",
+    "integrity": "sha512-LCkGo6JDfaBhgST7UpPWgNgLINpcpabaHfyz5OBx75nUYxBsaEPxjnyNjWpeb/xBup/682QnBfRBy2/LvPutZQ==",
+    "publishedAt": "2026-05-25T13:39:24.908Z"
+  },
+  {
+    "name": "@msgpackr-extract/msgpackr-extract-darwin-x64",
+    "version": "3.0.4",
+    "integrity": "sha512-zExlW9zUJKZH/tOtVMttwjKa4Xm/3KcNjnE3dPN92uCktwavMxpgCA3MoJK/DOnTWsQgo224OaST27/mPNAf+w==",
+    "publishedAt": "2026-05-25T13:39:23.481Z"
+  },
+  {
+    "name": "@msgpackr-extract/msgpackr-extract-linux-arm",
+    "version": "3.0.4",
+    "integrity": "sha512-Tg3yX65f5GbtXLkrYEHE5oibZG9epyYWas7FogTTEJeDEF9JlXJzKgXaNhT3UXlTOeA+AfZpYZYZ0uPj7Cfquw==",
+    "publishedAt": "2026-05-25T13:39:29.915Z"
+  },
+  {
+    "name": "@msgpackr-extract/msgpackr-extract-linux-arm64",
+    "version": "3.0.4",
+    "integrity": "sha512-dgX0P/9wGPJeHFBG+ZmhgE6bmtMt7NP5CRBGyyktpopdk/mW4POnrpQsSLtKI1dwpc+pPLuXHDh6vvskyQE/sw==",
+    "publishedAt": "2026-05-25T13:39:28.161Z"
+  },
+  {
+    "name": "@msgpackr-extract/msgpackr-extract-linux-x64",
+    "version": "3.0.4",
+    "integrity": "sha512-8TNXMEjJc3QEy7R/x1INhgiU+XakDAFUzBhaz7+Rbrs8NH5UQeHQxxmzsSBJGyV6I1jW79undiQm8tOI+D+8FQ==",
+    "publishedAt": "2026-05-25T13:39:26.633Z"
+  },
+  {
+    "name": "@msgpackr-extract/msgpackr-extract-win32-x64",
+    "version": "3.0.4",
+    "integrity": "sha512-CmCXPQrkbwExx3j946/PtHWHbYJiCRBRDl4BlkRQcJB/YOwQxJRTpoo7aTsortjgoJ1x7opzTSxn7C+ASSLVjQ==",
+    "publishedAt": "2026-05-25T13:12:04.332Z"
+  },
+  {
+    "name": "@oxc-project/types",
+    "version": "0.147.0",
+    "integrity": "sha512-IJ3s6ltHLp45S0bh7phkX+gJO7A1Wuz2EaqpAhb8WjqDwbzMiWKHhyyT42tskaWjEYXtHtVCPpnBJVT9+dcRLg==",
+    "publishedAt": "2026-08-24T11:28:49.935Z"
+  },
+  {
+    "name": "@rolldown/binding-android-arm-eabi",
+    "version": "1.2.6",
+    "integrity": "sha512-b+jTcARdTiFLI6jB4a5XjTm0RWd6KcRfQj/I2356fxUZemiho9zQLxo0RtCuMDAyKcLo6cEltkgbQp6d1+sjjQ==",
+    "publishedAt": "2026-08-26T12:03:38.458Z"
+  },
+  {
+    "name": "@rolldown/binding-android-arm64",
+    "version": "1.2.6",
+    "integrity": "sha512-lkWU8ZJaRk9q3CIEY1Tc7vIFALp3Xw5NfGJo2hQg5oIqNgxWi1zI+IiDEK3r70BF5Dzol1tcXsnzsRc8NLhG+Q==",
+    "publishedAt": "2026-08-26T12:05:07.698Z"
+  },
+  {
+    "name": "@rolldown/binding-darwin-arm64",
+    "version": "1.2.6",
+    "integrity": "sha512-dgR56NYnvAszm7Ob1B2/Vn0e8bUQYZH2UjVaMMtMVOCKFSfjhfLmuA/9+O+F+ajUdG6B/bSssrKW6JJYASa8jA==",
+    "publishedAt": "2026-08-26T12:08:01.532Z"
+  },
+  {
+    "name": "@rolldown/binding-darwin-x64",
+    "version": "1.2.6",
+    "integrity": "sha512-vpVxFvUCFioJqug7OTvqptkc4yb8UX0AwfDmJpaR/0sWz+BUmqSVAf7c8JkUgnN8YLspb4a/N6NhTyMAmdyQ7Q==",
+    "publishedAt": "2026-08-26T12:06:22.635Z"
+  },
+  {
+    "name": "@rolldown/binding-freebsd-x64",
+    "version": "1.2.6",
+    "integrity": "sha512-h1wG6Y6K3JlRswxsI64qQJqBAy4vrLuHgRbc8CZMGSWTOFRY6ghMApM1NKzB2I0n5xV1fjkE18SuVl2QpLeNpA==",
+    "publishedAt": "2026-08-26T12:19:42.027Z"
+  },
+  {
+    "name": "@rolldown/binding-linux-arm-gnueabihf",
+    "version": "1.2.6",
+    "integrity": "sha512-tbCiqub0q2MVWJKgF5PoAlNWCtQydiOYSLIkd8sByqK/6MMYLJRcSXSYodqYtd0O+Fw7QaVmKKlS4oL94YRZ0w==",
+    "publishedAt": "2026-08-26T12:06:55.613Z"
+  },
+  {
+    "name": "@rolldown/binding-linux-arm64-gnu",
+    "version": "1.2.6",
+    "integrity": "sha512-oxK9+baEBPhZG5HB4URY+uU04zJWeZlH6Tb9rB5DK4DF9XR1uXNLXt5Q5ZsugTKayNCNLhkcwz/ye74hRI98dg==",
+    "publishedAt": "2026-08-26T12:05:23.064Z"
+  },
+  {
+    "name": "@rolldown/binding-linux-arm64-musl",
+    "version": "1.2.6",
+    "integrity": "sha512-muWCk27FVBEZtv0MsK8gnfSmgczA8KQ0uRVJbTABKhkRfQc38aUrcb7fhi3BNiyseFmgcRsoMfQsSNJ+DbZdSw==",
+    "publishedAt": "2026-08-26T12:05:30.827Z"
+  },
+  {
+    "name": "@rolldown/binding-linux-ppc64-gnu",
+    "version": "1.2.6",
+    "integrity": "sha512-eWDoSfU7Co2qj3vgB3Dt4lj1mG6CoWbcJQkRMP3XJplyCMtuaq3LHvPFjS9QIPvMGWVadJC04Xiy0IdcVPtnwQ==",
+    "publishedAt": "2026-08-26T12:06:01.072Z"
+  },
+  {
+    "name": "@rolldown/binding-linux-s390x-gnu",
+    "version": "1.2.6",
+    "integrity": "sha512-2bWNjRSIayvupRKxXUY2tWG9fYdoUlTqWywHRvE8Eq3GvuQ+f2HeIkve697fIt+IQs/PV8yFsdWuhp1aJ1PdnA==",
+    "publishedAt": "2026-08-26T12:07:08.700Z"
+  },
+  {
+    "name": "@rolldown/binding-linux-x64-gnu",
+    "version": "1.2.6",
+    "integrity": "sha512-KekI0gS0wLxe1UBSQSjenBVwou/JkcQPDzBPICGZjxUv9k3RteHDPBQaiOicZUFKRIH2wKEimGwVpnJsbPzu7w==",
+    "publishedAt": "2026-08-26T12:06:46.821Z"
+  },
+  {
+    "name": "@rolldown/binding-linux-x64-musl",
+    "version": "1.2.6",
+    "integrity": "sha512-TvtPnfVr+HtyGiDmPK4VWmlNm7QhNNAcK5Q9A7aOXsI8545yCyaoMaicXrFZ72JzeYjaUVk7yT243zT0jzjFKQ==",
+    "publishedAt": "2026-08-26T12:11:55.971Z"
+  },
+  {
+    "name": "@rolldown/binding-openharmony-arm64",
+    "version": "1.2.6",
+    "integrity": "sha512-iOo0VEay2XFhaCcH0sps5XIimkSuOnNaZrf6+ZkoSOQBJPKNU48RkmJv0/lSpipexu5P+ouFgafe5IGr/DiQfg==",
+    "publishedAt": "2026-08-26T12:28:41.904Z"
+  },
+  {
+    "name": "@rolldown/binding-win32-arm64-msvc",
+    "version": "1.2.6",
+    "integrity": "sha512-y5NTmmasMS455JlOCO4ZM9krIchv3Mvm1crL1iUPGOPgEzSkves9n0SdC5Sjz6+qWDFhd8/JpfWMH8NSWNHe+A==",
+    "publishedAt": "2026-08-26T12:06:15.180Z"
+  },
+  {
+    "name": "@rolldown/binding-win32-x64-msvc",
+    "version": "1.2.6",
+    "integrity": "sha512-np8iZSLfXlAD4kWhiyq/u0Yt8oZDtRQ8lGhQaCXo2rl37KNjeU0GjJuwr4P3oeZ++ROfofsKNBqR5LTO8aXyWQ==",
+    "publishedAt": "2026-08-26T12:06:30.019Z"
+  },
+  {
+    "name": "@rolldown/pluginutils",
+    "version": "1.0.1",
+    "integrity": "sha512-2j9bGt5Jh8hj+vPtgzPtl72j0yRxHAyumoo6TNfAjsLB04UtpSvPbPcDcBMxz7n+9CYB0c1GxQFxYRg2jimqGw==",
+    "publishedAt": "2026-05-13T03:52:29.927Z"
+  },
+  {
+    "name": "@standard-schema/spec",
+    "version": "1.1.0",
+    "integrity": "sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w==",
+    "publishedAt": "2025-12-15T20:49:46.431Z"
+  },
+  {
+    "name": "@types/node",
+    "version": "24.13.3",
+    "integrity": "sha512-Dh8vAsV36ig5wa9OX4pXvMc9D3Veibfw2wix0CUwYODLD8nkj9UsLjASr49nPg+2eKzxhBV+v7L8pXvT4e639Q==",
+    "publishedAt": "2026-07-08T06:48:03.261Z"
+  },
+  {
+    "name": "@types/ws",
+    "version": "8.18.1",
+    "integrity": "sha512-ThVF6DCVhA8kUGy+aazFQ4kXQ7E1Ty7A3ypFOe0IcJV8O/M511G99AW24irKrW56Wt44yG9+ij8FaqoBGkuBXg==",
+    "publishedAt": "2025-04-01T02:59:54.693Z"
+  },
+  {
+    "name": "debug",
+    "version": "4.4.3",
+    "integrity": "sha512-RGwwWnwQvkVfavKVt22FGLw+xYSdzARwm0ru6DhTVA3umU5hZc28V3kO4stgYryrTlLpuvgI9GiijltAjNbcqA==",
+    "publishedAt": "2025-09-13T17:25:19.732Z"
+  },
+  {
+    "name": "detect-libc",
+    "version": "2.1.2",
+    "integrity": "sha512-Btj2BOOO83o3WyH59e8MgXsxEQVcarkUOpEYrubB0urwnN10yQ364rsiByU11nZlqWYZm05i/of7io4mzihBtQ==",
+    "publishedAt": "2025-10-05T12:46:33.077Z"
+  },
+  {
+    "name": "fdir",
+    "version": "6.5.0",
+    "integrity": "sha512-tIbYtZbucOs0BRGqPJkshJUYdL+SDH7dVM8gjy+ERp3WAUjLEFJE+02kanyHtwjWOnwrKYBiwAmM0p4kLJAnXg==",
+    "publishedAt": "2025-08-14T16:56:03.948Z"
+  },
+  {
+    "name": "fsevents",
+    "version": "2.3.3",
+    "integrity": "sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==",
+    "publishedAt": "2023-08-21T16:24:22.854Z"
+  },
+  {
+    "name": "lightningcss",
+    "version": "1.33.0",
+    "integrity": "sha512-WkUDrojuJs0xkgGf2udWxa3yGBRxPtxUkB79i6aCZLRgc7PM8fZe9TosfPDcvEpQZbuFASnHYmRLBLUbmLOIIA==",
+    "publishedAt": "2026-07-20T05:11:09.509Z"
+  },
+  {
+    "name": "lightningcss-android-arm64",
+    "version": "1.33.0",
+    "integrity": "sha512-gEpRTalKdosp4Bb8qWtc2iOgE5SeIHlpS1up9bFq2wAyYhl1UdTObYiHe98zEM9SQvSoqQZ1IQD0JNpg3Ml5pg==",
+    "publishedAt": "2026-07-20T05:10:36.404Z"
+  },
+  {
+    "name": "lightningcss-darwin-arm64",
+    "version": "1.33.0",
+    "integrity": "sha512-Sciaz8eenNTKn9b3t7+xr0ipTp9YxKQY4npwQ3mrRuL0BAVHBLyZxofhaKBAVtzmtRZ/zTyo0/to4B1uWG/Djg==",
+    "publishedAt": "2026-07-20T05:10:38.380Z"
+  },
+  {
+    "name": "lightningcss-darwin-x64",
+    "version": "1.33.0",
+    "integrity": "sha512-Z5UPAxzrjlWNNyGy6i65cJzzvgJ5D3T6wMvs+gWpY9d7qRhANrxqAp6LhxIgZhWEw18RfJTGcRxjuLIBr+m8XQ==",
+    "publishedAt": "2026-07-20T05:10:40.758Z"
+  },
+  {
+    "name": "lightningcss-freebsd-x64",
+    "version": "1.33.0",
+    "integrity": "sha512-QQM/Ti/hQajJwCY+RiWuCZ9sdtI/XQk7nDK5vC8kkdwixezOlDgvDx7+RT+QjK6FcFT4MpsuoBnHIo/O3StRRg==",
+    "publishedAt": "2026-07-20T05:10:43.067Z"
+  },
+  {
+    "name": "lightningcss-linux-arm-gnueabihf",
+    "version": "1.33.0",
+    "integrity": "sha512-N7FVBe6iS24MlM6R/4RBTxGhQheZGs7tiQ9U32UtF75NzP5Q7xWPRqLBCKxlRQRk3rY1jCIPLzx7WzOhuUIRLQ==",
+    "publishedAt": "2026-07-20T05:10:45.198Z"
+  },
+  {
+    "name": "lightningcss-linux-arm64-gnu",
+    "version": "1.33.0",
+    "integrity": "sha512-j2v/itmy4HlNxlc6voKXYgBqNi0Ng2LShg4z7GufpEgs05P+2suBVyi9I6YHq5uoVFx9ETin3eCEhLVyXGQnKg==",
+    "publishedAt": "2026-07-20T05:10:47.355Z"
+  },
+  {
+    "name": "lightningcss-linux-arm64-musl",
+    "version": "1.33.0",
+    "integrity": "sha512-yiO5ROMuYQgXbC60yjZU5CYSFZGKXL0HFATXt9mHJn1+zW55oCtMI9NfcVhYLMFDL7gV7oBPon/EmMMGg2OvtQ==",
+    "publishedAt": "2026-07-20T05:10:49.830Z"
+  },
+  {
+    "name": "lightningcss-linux-x64-gnu",
+    "version": "1.33.0",
+    "integrity": "sha512-ar+Ju7LmcN0Jo4FpL4hpFybwNG9/3A/Br5KW2n2jyODg3MEZXaDYADdemoNS+BDNfMgKvylJLj4S5tyRActuAg==",
+    "publishedAt": "2026-07-20T05:10:52.507Z"
+  },
+  {
+    "name": "lightningcss-linux-x64-musl",
+    "version": "1.33.0",
+    "integrity": "sha512-RYiYbkokw0trfKqqzfF55lginwEPrD3OJDfTuJzFs1MK6iFnDenaz1fqLLtX4ITG3OktJQXOeTaw1awrBAlZPw==",
+    "publishedAt": "2026-07-20T05:10:54.935Z"
+  },
+  {
+    "name": "lightningcss-win32-arm64-msvc",
+    "version": "1.33.0",
+    "integrity": "sha512-1K+MPfLSFVpphzpdbfkhlWk6wBrTObBzS2T6db10PNOZgR9GoVsAWzwNyuhUYYbTp23j+4RrncfujZ4uAzXvwA==",
+    "publishedAt": "2026-07-20T05:10:57.219Z"
+  },
+  {
+    "name": "lightningcss-win32-x64-msvc",
+    "version": "1.33.0",
+    "integrity": "sha512-OlEICDx/Xl0FqSp4bry8zFnCvGpig3Gl4gCquvYwHuqJKEC1+n9NgDniFvqHGmMv1ZkqDJrDqKKSykTDX+ehuA==",
+    "publishedAt": "2026-07-20T05:10:59.727Z"
+  },
+  {
+    "name": "ms",
+    "version": "2.1.3",
+    "integrity": "sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==",
+    "publishedAt": "2020-12-08T13:54:35.223Z"
+  },
+  {
+    "name": "msgpackr",
+    "version": "2.1.0",
+    "integrity": "sha512-p/pBCVO63CsvvpkomUnNNag6+n38rULuDA6HHe70o2gtC8ODI52foF/4ko2qQcp6OiErJXTmrZeXmsGGHsIQNQ==",
+    "publishedAt": "2026-08-27T20:17:19.489Z"
+  },
+  {
+    "name": "msgpackr-extract",
+    "version": "3.0.4",
+    "integrity": "sha512-4kmO/MdyUIkLIvTPr8VHLil4AtoKIoniWPIEk5+CDy0xnWC84azhSFmuJ7PxZdsYtiP5kEeQsORAVIeMgxT+Hw==",
+    "publishedAt": "2026-05-25T13:39:31.475Z"
+  },
+  {
+    "name": "nanoid",
+    "version": "3.3.18",
+    "integrity": "sha512-DTg4MJbGMWkfi6VZFdNt2/caMbQy4Ou+Op/hJQvGEWcnVfoA1QA+xzRKAzw9jD6+GVOOeYr/mIcuDSdug6F6+w==",
+    "publishedAt": "2026-08-07T16:41:05.696Z"
+  },
+  {
+    "name": "node-gyp-build-optional-packages",
+    "version": "5.2.2",
+    "integrity": "sha512-s+w+rBWnpTMwSFbaE0UXsRlg7hU4FjekKU4eyAih5T8nJuNZT1nNsskXpxmeqSK9UzkBl6UgRlnKc8hz8IEqOw==",
+    "publishedAt": "2024-06-09T03:33:11.576Z"
+  },
+  {
+    "name": "picocolors",
+    "version": "1.1.1",
+    "integrity": "sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA==",
+    "publishedAt": "2024-10-16T18:20:03.921Z"
+  },
+  {
+    "name": "picomatch",
+    "version": "4.0.7",
+    "integrity": "sha512-qcJu88Q2IWqJsDD529JKMdwGm/dvInW4HvQnRwiH9JtihJvzGOscDtHE3x1pBKeUOTysQ8kVmLnJ2kJu7yhcGA==",
+    "publishedAt": "2026-08-24T14:36:23.690Z"
+  },
+  {
+    "name": "playwright-core",
+    "version": "1.62.1",
+    "integrity": "sha512-wPYSwEBJY9GHraISXqyqtx0na0LpO3XEX7jNDhntbex7tzUS7kLnZsOlFruFJB4Hi/rhDMjXGqHewDZ68nYZVw==",
+    "publishedAt": "2026-07-30T16:36:51.295Z"
+  },
+  {
+    "name": "postcss",
+    "version": "8.5.26",
+    "integrity": "sha512-u82N74LFzG8ca+dD8puPnplTXoGH4fTPpVGuIbt36G3qvNlkvfD0lEAZSxaly3KX8TS/L1A1gsCEmvKmBcVbkQ==",
+    "publishedAt": "2026-08-06T08:33:00.043Z"
+  },
+  {
+    "name": "rolldown",
+    "version": "1.2.6",
+    "integrity": "sha512-vMM4q3aixf46GiF1Kok8jDPFsEpXgFWGjUHXNkNHNm+Y2adXAG2dbX91jkti3i0ZRsOlcmbuzAz1poObSHCmUA==",
+    "publishedAt": "2026-08-26T12:06:57.950Z"
+  },
+  {
+    "name": "rou3",
+    "version": "0.7.12",
+    "integrity": "sha512-iFE4hLDuloSWcD7mjdCDhx2bKcIsYbtOTpfH5MHHLSKMOUyjqQXTeZVa289uuwEGEKFoE/BAPbhaU4B774nceg==",
+    "publishedAt": "2025-12-15T16:41:55.162Z"
+  },
+  {
+    "name": "set-cookie-parser",
+    "version": "3.1.2",
+    "integrity": "sha512-5/r/lTwbJ3zQ+qwdUFZYeRNqda7P5HD8zQKqlSjdGt1/S0cjLAphHusj4Y58ahDtWn/g32xrIS58/ikOvwl0Lw==",
+    "publishedAt": "2026-07-09T15:48:04.332Z"
+  },
+  {
+    "name": "source-map-js",
+    "version": "1.2.1",
+    "integrity": "sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==",
+    "publishedAt": "2024-09-08T16:22:55.645Z"
+  },
+  {
+    "name": "tinyglobby",
+    "version": "0.2.17",
+    "integrity": "sha512-wXR/dYpcqKmfWpEdZjiKJOwCNFndD0DMnrW/cYjVGttEkBfVgcLFHoNrlj47mjOVic9yyNu65alsgF4NQyTa2g==",
+    "publishedAt": "2026-05-30T19:57:21.717Z"
+  },
+  {
+    "name": "tslib",
+    "version": "2.8.1",
+    "integrity": "sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==",
+    "publishedAt": "2024-10-31T22:42:48.624Z"
+  },
+  {
+    "name": "typescript",
+    "version": "6.0.3",
+    "integrity": "sha512-y2TvuxSZPDyQakkFRPZHKFm+KKVqIisdg9/CZwm9ftvKXLP8NRWj38/ODjNbr43SsoXqNuAisEf1GdCxqWcdBw==",
+    "publishedAt": "2026-04-16T23:38:27.905Z"
+  },
+  {
+    "name": "undici-types",
+    "version": "7.18.2",
+    "integrity": "sha512-AsuCzffGHJybSaRrmr5eHr81mwJU3kjw6M+uprWvCXiNeN9SOGwQ3Jn8jb8m3Z6izVgknn1R0FTCEAP2QrLY/w==",
+    "publishedAt": "2026-01-06T15:57:40.133Z"
+  },
+  {
+    "name": "vite",
+    "version": "8.2.2",
+    "integrity": "sha512-cFKLV/PRgAUlIRm5WjMjJ86jrftzpqcgH+Us+DS8mI3CDNiH30Whrz8uHL3+MOLPAgqbMBAqWdAHAphOAM+z/Q==",
+    "publishedAt": "2026-08-20T04:14:39.107Z"
+  },
+  {
+    "name": "ws",
+    "version": "8.21.3",
+    "integrity": "sha512-201TZ/kPWxoPr/OKWjquZR1SWKXcvxdH+e1xrx89b3YbmzLMFCLfnaG1HFIgWzJOEWZ7MvpK++odZufgYR50Rw==",
+    "publishedAt": "2026-08-07T14:10:25.816Z"
+  }
+]

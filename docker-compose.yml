@@ -1,0 +1,46 @@
+name: funmmo
+services:
+  tooling:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    init: true
+    user: "1000:1000"
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    pids_limit: 256
+    mem_limit: 3g
+    cpus: 4
+    tmpfs:
+      - /tmp:rw,nosuid,nodev,size=1g,mode=1777
+    volumes:
+      - .:/source:ro
+      - workspace:/workspace
+    ports:
+      - "127.0.0.1:5173:5173"
+    command: [node, /source/tools/task.mjs, serve]
+  browser:
+    image: mcr.microsoft.com/playwright@sha256:dcc5531e97840b9b5e794f2814476b21571c5124a3fca2267d73041f56e7580e
+    profiles: [test]
+    init: true
+    user: "${FUNMMO_BROWSER_UID:-1000}:${FUNMMO_BROWSER_GID:-1000}"
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    pids_limit: 512
+    mem_limit: 3g
+    cpus: 4
+    shm_size: 1g
+    tmpfs:
+      - /tmp:rw,nosuid,nodev,size=1g,mode=1777
+    environment:
+      PLAYWRIGHT_BROWSERS_PATH: /ms-playwright
+    volumes:
+      - ./tests:/tests:ro
+      - ./security:/security:ro
+      - workspace:/workspace:ro
+      - ./artifacts:/artifacts
+    command: [node, /tests/browser.mjs]
+volumes:
+  workspace:

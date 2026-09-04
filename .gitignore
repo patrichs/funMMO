@@ -1,0 +1,12 @@
+node_modules/
+.env
+.env.*
+!.env.example
+.tools/
+.npm-cache/
+dist/
+build/
+artifacts/
+coverage/
+playwright-report/
+test-results/
