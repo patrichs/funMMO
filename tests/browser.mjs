@@ -17,15 +17,23 @@ try {
   const a=await context.newPage(),b=await context.newPage();
   debugPage=a;
   for(const page of [a,b])page.on('pageerror',error=>errors.push(error.message));
+  // Software WebGL can delay page load on shared CI CPUs. Wait for the game's
+  // explicit ready signal after DOM navigation, with a bounded startup timeout.
+  const navigation={waitUntil:'domcontentloaded',timeout:60_000};
   for(let attempt=0;attempt<30;attempt++) {
-    try {await a.goto('http://tooling:5173');break;}
-    catch(error){if(attempt===29)throw error;await new Promise(resolve=>setTimeout(resolve,1000));}
+    try {await a.goto('http://tooling:5173',navigation);break;}
+    catch(error){
+      if(attempt===29 || !/net::ERR_(CONNECTION_REFUSED|CONNECTION_RESET|EMPTY_RESPONSE)/.test(error.message))throw error;
+      await new Promise(resolve=>setTimeout(resolve,1000));
+    }
   }
-  await a.waitForFunction(()=>window.__game?.ready);
+  await a.waitForFunction(()=>window.__game?.ready,undefined,{timeout:60_000});
   await a.screenshot({path:'/artifacts/embervale-welcome.png'});
   await a.getByLabel('Adventurer name').fill('Birch');await a.getByRole('button',{name:'Enter Embervale'}).click();
   await a.waitForFunction(()=>window.__game?.connected && window.__game.players.length===1);
-  await b.goto('http://tooling:5173');await b.getByLabel('Adventurer name').fill('Rowan');await b.getByRole('button',{name:'Enter Embervale'}).click();
+  await b.goto('http://tooling:5173',navigation);
+  await b.waitForFunction(()=>window.__game?.ready,undefined,{timeout:60_000});
+  await b.getByLabel('Adventurer name').fill('Rowan');await b.getByRole('button',{name:'Enter Embervale'}).click();
   await a.waitForFunction(()=>window.__game.players.length===2);
   await b.waitForFunction(()=>window.__game?.players.length===2);
   const before=await a.evaluate(()=>window.__game.players.find(p=>p.id===window.__game.sessionId));
