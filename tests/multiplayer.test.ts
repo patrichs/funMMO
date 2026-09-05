@@ -29,7 +29,7 @@ test('two real clients share movement, server-validated combat, chat and departu
     assert.equal(a.roomId,b.roomId);
     await waitFor(()=>a.state.players.size===2 && b.state.players.size===2,'Both players must be visible.');
     const original=b.state.players.get(a.sessionId)!.z;
-    a.send('move',{x:999,z:999,seq:1});a.send('attack','wisp-0');
+    a.send('move',{x:999,z:999,seq:1});a.send('cast',{spell:'sunbolt',target:[...a.state.enemies.entries()].find(([,e])=>Math.hypot(e.x,e.z)>100)![0]});
     await sleep(150);
     assert.equal(b.state.players.get(a.sessionId)!.z,original);
     assert.equal(a.state.enemies.get('wisp-0')!.hp,75);
@@ -39,15 +39,15 @@ test('two real clients share movement, server-validated combat, chat and departu
     await waitFor(()=>b.state.players.get(a.sessionId)!.z>original+3,'Movement must reach the other client.');
     const stopped=b.state.players.get(a.sessionId)!.z;
     await sleep(450);assert(Math.abs(b.state.players.get(a.sessionId)!.z-stopped)<.4);
-    a.send('attack','wisp-0');a.send('attack','wisp-0');a.send('attack','wisp-0');
+    a.send('cast',{spell:'sunbolt',target:'wisp-0'});a.send('cast',{spell:'sunbolt',target:'wisp-0'});a.send('cast',{spell:'sunbolt',target:'wisp-0'});
     await waitFor(()=>a.state.enemies.get('wisp-0')!.hp===50,'First valid attack should damage the wisp.');
     assert.equal(a.state.players.get(a.sessionId)!.xp,0);
-    await sleep(850);a.send('attack','wisp-0');
+    await sleep(850);a.send('cast',{spell:'sunbolt',target:'wisp-0'});
     await waitFor(()=>a.state.enemies.get('wisp-0')!.hp===25,'Cooldown should allow a second hit.');
-    await sleep(850);a.send('attack','wisp-0');
+    await sleep(850);a.send('cast',{spell:'sunbolt',target:'wisp-0'});
     await waitFor(()=>b.state.enemies.get('wisp-0')!.hp===0,'Defeat should replicate.');
     assert.equal(a.state.players.get(a.sessionId)!.xp,15);
-    a.send('attack','wisp-0');await sleep(100);assert.equal(a.state.players.get(a.sessionId)!.xp,15);
+    a.send('cast',{spell:'sunbolt',target:'wisp-0'});await sleep(100);assert.equal(a.state.players.get(a.sessionId)!.xp,15);
     const chat:unknown[]=[];b.onMessage('chat',data=>chat.push(data));a.send('chat','Hello forest');
     await waitFor(()=>chat.length===1,'Chat must reach the other player.');
     assert.deepEqual(chat[0],{name:'Birch',text:'Hello forest'});

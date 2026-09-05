@@ -1,7 +1,8 @@
 # funMMO
 
-A small browser MMO taking its first steps. Explore **Embervale**, a peaceful
-village at the edge of a restless forest, with other adventurers.
+A browser MMO prototype set in **The Green Reach**, a 1 km × 1 km human
+borderland. Begin in Embervale and follow the roads to farms, riverside cottages,
+a quarry, an old abbey and Northwatch. Adventure alongside other guest players.
 
 ## Play locally
 
@@ -26,16 +27,23 @@ The service binds to loopback and is intended for local development.
 | WASD | Move relative to the camera |
 | Right mouse drag | Rotate the camera |
 | Mouse wheel | Zoom |
-| Tab / click a wisp | Choose a target |
-| 1 | Sunbolt (12 m range; 0.8 s cooldown) |
-| 2 | Mending light (+40 health; 6 s cooldown) |
+| Tab / click an enemy | Choose a target |
+| 1–6 | Sunbolt, Mending light, Frost lance, Fireburst, Stone ward, Windstep |
+| E / click a nearby NPC or resource | Talk or gather |
+| R | Summon / dismiss travel horse (outside combat) |
+| M | Toggle world map |
+| C | Inspect character / restore previous camera |
 | Enter | Local chat |
-| Escape | Clear target / leave chat input |
+| Escape | Clear target / close map or conversation / leave chat input |
 
-Defeat three wisps to complete the first objective. Wisps damage nearby
-adventurers and respawn after eight seconds. A defeated adventurer returns to
-the village heartstone. Progress is temporary: this slice uses guest sessions
-and has no database or accounts yet.
+Start by speaking to **Warden Elin**, beside the lantern path, and accept her
+quest. Ten quests cover combat, gathering and exploration across six locations.
+Return to the quest giver to claim each reward. Press R for faster travel and M
+to find your way. See [the game guide](docs/GAME.md) for the world, quest chains,
+spell details and current gameplay limits.
+
+Progress is temporary: this slice uses guest sessions and has no database or
+accounts yet. Leaving the session or restarting the server resets progress.
 
 ## Development and verification
 
@@ -63,22 +71,29 @@ external version must be at least seven days old. Install scripts stay disabled.
 
 ## Current scope
 
-- Procedural 3D village, forest, characters and effects; no external art downloads.
+- A 1 km² procedural countryside with six settlements/landmarks, farms and roads.
+- Human adventurers and quest givers, ten quests, six enemy types and 74 enemies.
+- An original rigged anime adventurer with blonde hair, hoodie and plaid skirt;
+  idle, run, casting and mounted animations, plus a distance model.
+- Six spells, mana, travel horses, a world map, minimap and objective tracking.
 - Shared Colyseus zones with up to 20 guest players each.
 - Server-controlled movement, collision, spell cooldowns, damage, XP and respawns.
-- Local chat rendered as text, targeting, health display and a small hotbar.
+- Local chat rendered as text, targeting, health/mana display and spell cooldowns.
 - Automated tests and the same Docker dependency safeguards in CI.
 
 The 20-player setting is a room capacity, not a measured performance guarantee.
-Next steps: PostgreSQL-backed characters, inventory and loot, quest interactions,
-movement prediction, and measured multi-client load tests. Authentication,
+Next steps: PostgreSQL-backed characters, inventory and loot, movement prediction, and measured multi-client load tests. Authentication,
 cross-zone travel, durable progression and public hosting are not implemented.
 
 ## Layout
 
 - `client/`: Babylon.js world and HTML/CSS interface.
 - `server/`: authoritative zone and Node HTTP/WebSocket adapter.
-- `shared/`: state schema and movement/combat rules.
+- `shared/`: state schema, movement rules, and world/quest/spell content.
+- `docs/GAME.md`: player guide and current gameplay scope.
+- `docs/CHARACTER.md`: character concepts, Blender source, animation and export workflow.
+- `assets/characters/`: editable character source and concept art.
+- `public/characters/`: self-contained game models and export manifest.
 - `tools/`, `security/`: isolated workflow and dependency review evidence.
 - `tests/`: policy, gameplay, multiplayer, and rendered browser verification.
 

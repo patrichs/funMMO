@@ -2,28 +2,32 @@
 <html lang="en">
 <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#162e31"><title>funMMO · Embervale</title></head>
 <body>
-  <canvas id="world" aria-label="Embervale game world"></canvas>
+  <canvas tabindex="0" id="world" aria-label="Embervale game world"></canvas>
   <div id="render-error" role="alert" hidden></div>
-  <header class="masthead"><span class="sigil">✧</span><div><strong>funMMO</strong><span>A WORLD IN THE MAKING</span></div><span class="build-tag">FIRST LIGHT · 0.1</span></header>
+  <header class="masthead"><span class="sigil">✧</span><div><strong>funMMO</strong><span>A WORLD IN THE MAKING</span></div><span class="build-tag">THE GREEN REACH · 0.2</span></header>
   <aside class="realm"><span class="live-dot"></span><span id="connection">Ready to explore</span><span class="realm-divider"></span><span id="online">Embervale</span></aside>
   <main id="welcome" class="welcome">
     <span class="eyebrow">THE JOURNEY BEGINS HERE</span>
-    <h1>A little world.<br>A new adventure.</h1>
-    <p>Beyond the lanterns, the forest is stirring.<br>Take up your staff. Find your own way.</p>
+    <h1>A kingdom’s roads.<br>Your adventure.</h1>
+    <p>Six havens. A thousand metres of countryside.<br>Help its people. Brave the roads between.</p>
     <form id="join-form"><label for="name">YOUR ADVENTURER</label><div class="name-field"><span>✦</span><input id="name" name="name" maxlength="18" pattern="[a-zA-Z0-9 _\-]+" value="Traveler" autocomplete="off" required aria-label="Adventurer name"></div><button id="join" type="submit">Enter Embervale <span>↗</span></button></form>
     <div class="welcome-foot"><span>◈ Warden</span><span>Guest adventure · progress resets</span></div>
     <p id="join-error" role="alert"></p>
   </main>
   <div id="hud" hidden>
     <div id="nameplates"></div>
-    <section class="unit-frame panel"><div class="portrait">✧<span>1</span></div><div class="vitals"><div class="unit-heading"><strong id="player-name">Traveler</strong><span>WARDEN</span></div><div class="health-track"><div id="health-fill"></div><span id="health">100 / 100</span></div><div class="xp-track"><div id="xp-fill"></div></div><span id="xp-label">0 XP · Level 1</span></div></section>
-    <section class="zone-title"><span>THE GREEN REACH</span><h2>Embervale</h2><p>A haven at the edge of the wild.</p></section>
-    <section class="quest panel"><span class="eyebrow">✦ YOUR FIRST ADVENTURE</span><h3>A light in the thicket</h3><p>Restless wisps gather beyond the village.<br>Help the forest find its peace.</p><div class="objective"><span id="quest-check">◇</span><span>Quiet the restless wisps</span><strong id="quest-progress">0 / 3</strong></div><div class="reward">REWARD PER WISP <span>✧ 15 XP</span></div></section>
-    <section id="target-panel" class="target panel" hidden><span>YOUR TARGET</span><strong>Restless wisp</strong><div class="target-track"><div id="target-fill"></div></div><small id="target-distance"></small></section>
+    <section class="unit-frame panel"><div class="portrait">✧<span>1</span></div><div class="vitals"><div class="unit-heading"><strong id="player-name">Traveler</strong><span>WARDEN</span></div><div class="health-track"><div id="health-fill"></div><span id="health">100 / 100</span></div><div class="mana-track"><div id="mana-fill"></div><span id="mana">100 / 100 mana</span></div><div class="xp-track"><div id="xp-fill"></div></div><span id="xp-label">0 XP · Level 1</span></div></section>
+    <section class="zone-title"><span>THE GREEN REACH</span><h2 id="zone-name">Embervale</h2><p id="zone-description">A haven at the edge of the wild.</p></section>
+    <section class="quest panel"><span class="eyebrow">✦ THE PEOPLE OF THE REACH</span><h3>Your adventures</h3><div id="quest-list"></div><div id="quest-total" class="reward">0 / 10 quests completed</div><button id="map-open" class="text-button">M · Open world map</button></section>
+    <section class="minimap-panel panel"><canvas id="minimap" width="190" height="190" aria-label="Nearby terrain and quest givers"></canvas><div id="travel-status">R · Summon travel horse</div></section>
+    <div id="waypoint"></div><div id="buffs"></div><button id="interact" hidden></button>
+    <section id="dialog" class="dialog panel" hidden><button id="dialog-close" class="close-button" aria-label="Close conversation">×</button><span id="dialog-role" class="eyebrow"></span><h2 id="dialog-name"></h2><h3 id="dialog-title"></h3><p id="dialog-text"></p><p id="dialog-reward"></p><button id="dialog-action">Accept quest</button></section>
+    <section id="map-panel" class="map-panel panel" hidden><button id="map-close" class="close-button" aria-label="Close world map">×</button><span class="eyebrow">THE KINGDOM’S BORDERLANDS</span><h2>The Green Reach</h2><canvas id="world-map" width="660" height="660" aria-label="Map of the one kilometre square world"></canvas><p>Gold: quest givers · Ring: tracked objective · White: you · Blue: companions</p></section>
+    <section id="target-panel" class="target panel" hidden><span>YOUR TARGET</span><strong id="target-name">Restless wisp</strong><div class="target-track"><div id="target-fill"></div></div><small id="target-distance"></small></section>
     <div id="toast" role="status" aria-live="polite"></div>
     <section class="chat panel"><div class="chat-heading"><span class="live-dot"></span> LOCAL CHAT <span id="chat-count">EMBER VALE</span></div><div id="chat-lines" role="log" aria-live="polite"><p class="system">Welcome to Embervale. Your adventure starts here.</p></div><form id="chat-form"><input id="chat-input" maxlength="160" placeholder="Enter to chat…" aria-label="Local chat message" autocomplete="off"></form></section>
-    <footer class="action-area"><div class="action-hint" id="action-hint">TAB to target a wisp · 1 to cast</div><div class="hotbar"><button id="attack" class="ability amber" aria-label="Cast Sunbolt"><kbd>1</kbd><span>✹</span><small>Sunbolt</small><i id="attack-cooldown"></i></button><button id="heal" class="ability mint" aria-label="Cast Mending Light"><kbd>2</kbd><span>✤</span><small>Mending light</small><i id="heal-cooldown"></i></button><div class="hotbar-divider"></div><div class="key-guide"><span><kbd>W A S D</kbd> Move</span><span><kbd>RMB</kbd> Look around</span><span><kbd>SCROLL</kbd> Zoom</span></div></div></footer>
-    <div class="coordinates"><span id="position">0, 5</span><span>✧</span><span id="latency">Connecting</span><button id="leave">Leave world</button></div>
+    <footer class="action-area"><div class="action-hint" id="action-hint">TAB to target a wisp · 1 to cast</div><div class="hotbar" id="hotbar"></div></footer>
+    <div class="coordinates"><span id="position">0, 5</span><span>✧</span><span id="latency">Connecting</span><button id="character-view" aria-pressed="false">C · Character</button><button id="leave">Leave world</button></div>
   </div>
   <div class="world-caption" id="world-caption"><span>01 — THE GREEN REACH</span><strong>Embervale</strong><span>Somewhere worth getting lost.</span></div>
   <script type="module" src="/client/main.ts"></script>

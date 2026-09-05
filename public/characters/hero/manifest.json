@@ -1,0 +1,26 @@
+{
+  "format": "glTF 2.0",
+  "heightMeters": 1.818,
+  "animationFps": 60,
+  "bones": 24,
+  "materials": 2,
+  "animations": [
+    "Idle",
+    "Walk",
+    "Run",
+    "Cast",
+    "Ride"
+  ],
+  "lods": [
+    {
+      "file": "hero.glb",
+      "triangles": 45512,
+      "bytes": 1989680
+    },
+    {
+      "file": "hero-lod1.glb",
+      "triangles": 11355,
+      "bytes": 715428
+    }
+  ]
+}

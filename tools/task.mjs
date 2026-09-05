@@ -51,7 +51,7 @@ function stage(includeCode = false) {
     if (fs.existsSync(`${source}/${name}`)) fs.copyFileSync(`${source}/${name}`, `${workspace}/${name}`);
     else if (fs.existsSync(`${workspace}/${name}`)) fs.unlinkSync(`${workspace}/${name}`);
   }
-  if (includeCode) for (const name of ['client','server','shared','tests','tools','tsconfig.json','tsconfig.server.json','vite.config.ts','index.html']) {
+  if (includeCode) for (const name of ['client','server','shared','public','tests','tools','tsconfig.json','tsconfig.server.json','vite.config.ts','index.html']) {
     if (!fs.existsSync(`${source}/${name}`)) continue;
     fs.rmSync(`${workspace}/${name}`, {recursive: true, force: true});
     fs.cpSync(`${source}/${name}`, `${workspace}/${name}`, {recursive: true});

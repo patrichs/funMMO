@@ -30,15 +30,25 @@ After the initial setup, verify gameplay changes with:
 ```
 
 The browser check joins two players and exercises rendering, movement
-replication, combat, chat, and leaving the world. It writes screenshots into the
+replication, combat, chat, NPC quest acceptance, maps, riding, gathering, quest
+turn-in, and leaving the world. It writes screenshots into the
 ignored `artifacts/` directory. Review those images for visual changes. Use a
 fresh local server for the browser check, without other players connected.
+
+For character art, see [the character guide](docs/CHARACTER.md). Keep Blender
+source, glTF detail levels and the export manifest synchronized. The browser
+check also verifies skinned models and run/ride animation selection.
 
 Run these commands sequentially: tooling tasks share one Docker workspace
 volume. Rebuild after server edits and use `./dev up` to restart with current
 source. Documentation-only changes need a content/link review, not a full
 gameplay test run. CI runs the complete verification workflow for pushes and
 pull requests.
+
+World content is declared in `shared/content.ts`; rules live in
+`server/WorldRoom.ts`. Update [the game guide](docs/GAME.md) when controls,
+quests, spells or progression change. Keep private session progress in the
+optional local handoff, outside tracked documentation.
 
 ## Changing dependencies
 

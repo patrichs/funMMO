@@ -6,6 +6,12 @@
     "publishedAt": "2026-08-27T07:40:03.583Z"
   },
   {
+    "name": "@babylonjs/loaders",
+    "version": "9.23.0",
+    "integrity": "sha512-4qNxiHmi2udyZmTsVL3iUUfVF4BKecgmFpp1//wBoZ6RhTWlkbBT4CIJLVPeibXZeJliZ5vII8rvZqDPgGiotw==",
+    "publishedAt": "2026-08-27T07:40:18.388Z"
+  },
+  {
     "name": "@better-auth/utils",
     "version": "0.3.1",
     "integrity": "sha512-+CGp4UmZSUrHHnpHhLPYu6cV+wSUSvVbZbNykxhUDocpVNTo9uFFxw/NqJlh1iC4wQ9HKKWGCKuZ5wUgS0v6Kg==",
@@ -226,6 +232,12 @@
     "version": "8.18.1",
     "integrity": "sha512-ThVF6DCVhA8kUGy+aazFQ4kXQ7E1Ty7A3ypFOe0IcJV8O/M511G99AW24irKrW56Wt44yG9+ij8FaqoBGkuBXg==",
     "publishedAt": "2025-04-01T02:59:54.693Z"
+  },
+  {
+    "name": "babylonjs-gltf2interface",
+    "version": "9.23.0",
+    "integrity": "sha512-oD9rkfCafvGACikVWhVVl1Iy9bDuBVlI7zmeiDXI8y5gw7UOmQMffpvrl/ujoiw5agcsEAaQuF6Dbjfb+Cpaiw==",
+    "publishedAt": "2026-08-27T07:41:00.946Z"
   },
   {
     "name": "debug",

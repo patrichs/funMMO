@@ -54,3 +54,19 @@ public Transport interface, public WebSocketClient submodule, and reserved-seat
 connection helper. Colyseus core handles matchmaking and HTTP routing directly.
 No upstream package is patched and no release-age exception is used. Transport
 behavior is covered by real-client integration tests.
+
+## Character asset loader (2026-09-05)
+
+Added `@babylonjs/loaders@9.23.0` (published 2026-08-27 07:40:18 UTC) to load
+the original rigged Blender character as glTF. Its sole new peer is
+`babylonjs-gltf2interface@9.23.0` (2026-08-27 07:41:00 UTC), the same upstream's
+glTF declarations. Both identify BabylonJS/Babylon.js as their official upstream,
+use Apache-2.0, and advertise registry integrity and signatures. Neither adds an
+install script. No provenance attestation was advertised for these packages.
+
+Reviewed the complete lockfile diff: these are the only two additions; existing
+versions are unchanged. All 75 external locked versions passed the full 168-hour
+timestamp check. Socket resolution and the pre-install audit reported no warnings
+and zero vulnerabilities. Installation must still pass Socket with a fresh cache,
+scripts disabled, and the post-install audit. Only glTF 2.0 is imported by the
+client; the character embeds its textures and needs no remote decoder or assets.

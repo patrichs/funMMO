@@ -15,8 +15,8 @@ test('movement respects zone bounds and building collisions',()=>{
 });
 test('combat requires living target, range and server cooldown',()=>{
   const player={x:0,z:0};
-  assert(canAttack(player,{x:12,z:0,hp:75},800,800));
-  assert(!canAttack(player,{x:12.1,z:0,hp:75},800,800));
+  assert(canAttack(player,{x:24,z:0,hp:75},800,800));
+  assert(!canAttack(player,{x:24.1,z:0,hp:75},800,800));
   assert(!canAttack(player,{x:1,z:0,hp:0},800,800));
   assert(!canAttack(player,{x:1,z:0,hp:75},799,800));
 });
