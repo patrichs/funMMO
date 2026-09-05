@@ -23,6 +23,7 @@ try {
   // Software WebGL can delay page load on shared CI CPUs. Wait for the game's
   // explicit ready signal after DOM navigation, with a bounded startup timeout.
   const navigation={waitUntil:'domcontentloaded',timeout:60_000};
+  await a.bringToFront();
   for(let attempt=0;attempt<30;attempt++) {
     try {await a.goto('http://tooling:5173',navigation);break;}
     catch(error){
@@ -53,6 +54,7 @@ try {
   await a.waitForFunction(()=>window.__game.avatars.find(a=>a.id===window.__game.sessionId)?.clip==='Ride');
   await a.screenshot({path:'/artifacts/hero-mounted.png'});
   await a.keyboard.press('r');await a.waitForFunction(()=>!window.__game.players.find(p=>p.id===window.__game.sessionId).mounted);
+  await b.bringToFront();
   await b.goto('http://tooling:5173',navigation);
   await b.waitForFunction(()=>window.__game?.ready,undefined,{timeout:60_000});
   await b.getByLabel('Adventurer name').fill('Rowan');await b.getByRole('button',{name:'Enter Embervale'}).click();

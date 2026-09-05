@@ -7,6 +7,8 @@ export function createWorld(canvas:HTMLCanvasElement) {
   // Match the visible path and plaza surfaces so soles rest above their geometry.
   const surfaceHeight=(x:number,z:number)=>groundHeight(x,z)+(roadDistance(x,z)<3.2?.32:REGIONS.some(r=>Math.hypot(x-r.x,z-r.z)<11)?.075:.025);
   const engine=new Engine(canvas,true,{preserveDrawingBuffer:true,stencil:true});
+  // Keep networking alive without drawing an unfocused game window.
+  engine.renderEvenInBackground=false;
   engine.setHardwareScalingLevel(Math.max(1,window.devicePixelRatio/1.5));
   const scene=new Scene(engine);
   scene.clearColor=new Color4(.68,.82,.83,1);
