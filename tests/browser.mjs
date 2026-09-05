@@ -13,8 +13,11 @@ const browser=await chromium.launch({headless:true,args:['--use-gl=angle','--use
 const errors=[];
 let debugPage;
 try {
-  const context=await browser.newContext({viewport:{width:1440,height:1000},reducedMotion:'reduce'});
-  const a=await context.newPage(),b=await context.newPage();
+  // Independent sessions also avoid two heavy WebGL tabs sharing one renderer
+  // process during startup on software-rendered CI machines.
+  const options={viewport:{width:1100,height:800},reducedMotion:'reduce'};
+  const context=await browser.newContext(options),otherContext=await browser.newContext(options);
+  const a=await context.newPage(),b=await otherContext.newPage();
   debugPage=a;
   for(const page of [a,b]){page.on('pageerror',error=>errors.push(error.message));page.on('websocket',socket=>socket.on('framesent',frame=>{assert(Buffer.byteLength(frame.payload)<=2048,'Client messages must fit the bounded transport payload');}));page.on('console',msg=>{if(['warning','error'].includes(msg.type()))console.log('Browser console:',msg.text());});}
   // Software WebGL can delay page load on shared CI CPUs. Wait for the game's
@@ -75,6 +78,9 @@ try {
   // rendering can make those steps longer than the character's survival time.
   await a.waitForTimeout(700);await a.keyboard.press('1');
   await a.waitForFunction(()=>window.__game.enemies.find(e=>e.id===window.__game.target)?.hp===0);
+  // Leave the spawn area before chat and screenshots: on software renderers
+  // those steps can outlast the defeated enemy's 15-second respawn timer.
+  await travel(0,5);
   await a.getByLabel('Local chat message').fill('Hello from the village! Ready to explore?');await a.getByLabel('Local chat message').press('Enter');
   await b.waitForFunction(()=>document.querySelector('#chat-lines').textContent.includes('Ready to explore?'));
   await a.screenshot({path:'/artifacts/embervale-play.png'});
