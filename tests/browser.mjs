@@ -11,18 +11,25 @@ const require=createRequire('/workspace/package.json');
 const {chromium}=require('playwright-core');
 const browser=await chromium.launch({headless:true,args:['--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader']});
 const errors=[];
-let debugPage;
+let debugPage,secondPage;
+const pendingRequests=new Map();
 try {
   // Independent sessions also avoid two heavy WebGL tabs sharing one renderer
   // process during startup on software-rendered CI machines.
   const options={viewport:{width:1100,height:800},reducedMotion:'reduce'};
   const context=await browser.newContext(options),otherContext=await browser.newContext(options);
   const a=await context.newPage(),b=await otherContext.newPage();
+  secondPage=b;
+  b.on('request',request=>pendingRequests.set(request,request.url()));
+  b.on('requestfinished',request=>pendingRequests.delete(request));
+  b.on('requestfailed',request=>pendingRequests.delete(request));
   debugPage=a;
   for(const page of [a,b]){page.on('pageerror',error=>errors.push(error.message));page.on('websocket',socket=>socket.on('framesent',frame=>{assert(Buffer.byteLength(frame.payload)<=2048,'Client messages must fit the bounded transport payload');}));page.on('console',msg=>{if(['warning','error'].includes(msg.type()))console.log('Browser console:',msg.text());});}
   // Software WebGL can delay page load on shared CI CPUs. Wait for the game's
   // explicit ready signal after DOM navigation, with a bounded startup timeout.
-  const navigation={waitUntil:'domcontentloaded',timeout:60_000};
+  // Wait for the document response, then the explicit game-ready signal.
+  // Cold shader compilation can delay DOMContentLoaded on software WebGL.
+  const navigation={waitUntil:'commit',timeout:60_000};
   await a.bringToFront();
   for(let attempt=0;attempt<30;attempt++) {
     try {await a.goto('http://tooling:5173',navigation);break;}
@@ -56,7 +63,7 @@ try {
   await a.keyboard.press('r');await a.waitForFunction(()=>!window.__game.players.find(p=>p.id===window.__game.sessionId).mounted);
   await b.bringToFront();
   await b.goto('http://tooling:5173',navigation);
-  await b.waitForFunction(()=>window.__game?.ready,undefined,{timeout:60_000});
+  await b.waitForFunction(()=>window.__game?.ready,undefined,{timeout:180_000,polling:250});
   await b.getByLabel('Adventurer name').fill('Rowan');await b.getByRole('button',{name:'Enter Embervale'}).click();
   await a.waitForFunction(()=>window.__game.players.length===2);
   await b.waitForFunction(()=>window.__game?.players.length===2);
@@ -134,6 +141,7 @@ try {
   console.log('Browser checks passed: WebGL rendering, two-player join, WASD replication, NPC quest acceptance, maps, mounting, six spells, frost damage, safe chat, departure, horseback travel and gathering quest turn-in.');
 } catch(error) {
   console.error('Browser errors:',errors);
+  console.error('Second-page startup:',{url:secondPage?.url(),pending:[...pendingRequests.values()]});
   console.error('Game diagnostics:',await debugPage?.evaluate(()=>{const g=window.__game;return g?{connected:g.connected,disconnectCode:g.disconnectCode,lastNotice:g.lastNotice,players:g.players,target:g.target,enemy:g.enemies.find(e=>e.id===g.target)}:null;}).catch(()=>null));
   await debugPage?.screenshot({path:'/artifacts/browser-failure.png'}).catch(()=>{});
   throw error;
